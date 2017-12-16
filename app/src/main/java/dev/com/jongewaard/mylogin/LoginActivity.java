@@ -46,8 +46,10 @@ public class LoginActivity extends AppCompatActivity {
                 String email = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
                 if(login(email, password)) {
+                    //metodo goToMain
                     goToMain();
-
+                    //metodo saveOnPreferences
+                    saveOnPreferences(email,password);
                 }
             }
         });
@@ -78,6 +80,17 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         switchRemember = (Switch) findViewById(R.id.switchRemember);
         btnLogin = (Button) findViewById(R.id.buttonLogin);
+    }
+
+    private void saveOnPreferences(String email, String password){
+        if(switchRemember.isChecked()){
+            //Editor!
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("email", email);
+            editor.putString("pass", password);
+          //editor.commit();            aqui el codigo se para hasta que la info se guarde
+            editor.apply();
+        }
     }
 
     private boolean isValidEmail(String email) {
