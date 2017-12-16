@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         //aquí pego el metodo con el codigo recogido
         bindUI();
@@ -35,7 +35,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
-                login(email, password);
+                if(login(email, password)) {
+                    goToMain();
+
+                }
             }
         });
 
@@ -78,7 +81,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void goToMain(){
+                            //voy de LoginActivity hacia el MainActivity!!
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        /* Una vez que ingreso con el email y el password e ingreso a la app, estas Flags impiden
+        que vuelva a la pantalla de Login a menos que cierre sesión */
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
