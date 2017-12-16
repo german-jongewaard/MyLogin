@@ -1,6 +1,6 @@
 package dev.com.jongewaard.mylogin;
 
-import android.app.Activity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,7 +22,6 @@ public class LoginActivity extends AppCompatActivity {
 
     /* Trabajar con las SharedPreferences*/
     private SharedPreferences prefs;
-
 
     private EditText editTextEmail;
     private EditText editTextPassword;
@@ -53,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private boolean login(String email, String password){
@@ -70,7 +68,6 @@ public class LoginActivity extends AppCompatActivity {
             //si ninguno fallo es verdadero!
             return true;
         }
-
     }
 
     /* Método para recojer el codigo*/
@@ -111,5 +108,4 @@ public class LoginActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-
 }
