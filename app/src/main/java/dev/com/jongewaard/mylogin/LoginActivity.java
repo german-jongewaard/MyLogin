@@ -1,7 +1,9 @@
 package dev.com.jongewaard.mylogin;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -17,6 +19,11 @@ import android.widget.Toast;
  */
 
 public class LoginActivity extends AppCompatActivity {
+
+    /* Trabajar con las SharedPreferences*/
+    private SharedPreferences prefs;
+
+
     private EditText editTextEmail;
     private EditText editTextPassword;
     private Switch switchRemember;
@@ -26,6 +33,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //así creo el SharedPreferences
+        prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
         //aquí pego el metodo con el codigo recogido
         bindUI();
@@ -77,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private  boolean isValidPassword(String password) {
         //que el password sea mayor de 4 caracteres!
-        return password.length() > 4;
+        return password.length() >= 4;
     }
 
     private void goToMain(){
