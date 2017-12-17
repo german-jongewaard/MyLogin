@@ -2,6 +2,7 @@ package dev.com.jongewaard.mylogin;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,11 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
 
             case R.id.menu_logout:
-
+                logOut();
                 return true;
 
             case R.id.menu_forgetlogout:
-
+                removeSharedPreferences();
+                logOut();
                 return true;
 
             default:
@@ -51,6 +53,21 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    //desde el MainActivity vamos a ir al LoginActivity
+    private void logOut(){
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+
+    }
+
+    //Borrado de todas las preferencias
+    private void removeSharedPreferences() {
+
+        prefs.edit().clear().apply();
 
     }
 }
