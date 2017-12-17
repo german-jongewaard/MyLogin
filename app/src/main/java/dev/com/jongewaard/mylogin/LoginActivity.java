@@ -86,9 +86,12 @@ public class LoginActivity extends AppCompatActivity {
 
         String email = getUserMailPrefs(); //cojo el email y el password de la SharedPreferences
         String password = getUserPassPrefs();
+        //si no estan vacios el email y el password
+        if(!TextUtils.isEmpty(email) && (!TextUtils.isEmpty(password))) {
+            editTextEmail.setText(email);
+            editTextPassword.setText(password);
 
-
-
+        }
     }
 
     private void saveOnPreferences(String email, String password){
