@@ -36,6 +36,9 @@ public class LoginActivity extends AppCompatActivity {
         //así creo el SharedPreferences
         prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
+        //compruebo si se esta guardando o no el login!
+        setCredentialsIfExist();
+
         //aquí pego el metodo con el codigo recogido
         bindUI();
         //si pulso el boton login
@@ -77,6 +80,13 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         switchRemember = (Switch) findViewById(R.id.switchRemember);
         btnLogin = (Button) findViewById(R.id.buttonLogin);
+    }
+
+    private void setCredentialsIfExist(){
+
+
+
+
     }
 
     private void saveOnPreferences(String email, String password){
