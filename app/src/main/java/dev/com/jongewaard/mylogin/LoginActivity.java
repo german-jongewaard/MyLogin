@@ -33,14 +33,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //aquí pego el metodo con el codigo recogido
+        bindUI();
         //así creo el SharedPreferences
         prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
         //compruebo si se esta guardando o no el login!
         setCredentialsIfExist();
 
-        //aquí pego el metodo con el codigo recogido
-        bindUI();
+
         //si pulso el boton login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,8 +89,11 @@ public class LoginActivity extends AppCompatActivity {
         String password = getUserPassPrefs();
         //si no estan vacios el email y el password
         if(!TextUtils.isEmpty(email) && (!TextUtils.isEmpty(password))) {
+
             editTextEmail.setText(email);
             editTextPassword.setText(password);
+
+
 
         }
     }
