@@ -84,6 +84,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setCredentialsIfExist(){
 
+        String email = getUserMailPrefs(); //cojo el email y el password de la SharedPreferences
+        String password = getUserPassPrefs();
 
 
 
@@ -117,5 +119,19 @@ public class LoginActivity extends AppCompatActivity {
         que vuelva a la pantalla de Login a menos que cierre sesión */
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+
+    //obtengo el email
+    private String getUserMailPrefs(){
+
+        return prefs.getString("email", "");
+
+    }
+
+    //obtengo el password
+    private String getUserPassPrefs(){
+
+        return prefs.getString("pass", "");
+
     }
 }
