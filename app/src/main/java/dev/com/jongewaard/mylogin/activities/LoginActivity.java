@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //aquí pego el metodo con el codigo recogido
         bindUI();
+
         //así creo el SharedPreferences
         prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
+
                 if(login(email, password)) {
                     //metodo goToMain
                     goToMain();
@@ -76,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = Util.getUserMailPrefs(prefs); //cojo el email y el password de la SharedPreferences
         String password = Util.getUserPassPrefs(prefs);
         //si no estan vacios el email y el password
-        if(!TextUtils.isEmpty(email) && (!TextUtils.isEmpty(password))) {
+        if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
 
             editTextEmail.setText(email);
             editTextPassword.setText(password);

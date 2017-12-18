@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
 
-
             case R.id.menu_logout:
                 logOut();
                 return true;

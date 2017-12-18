@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 
 import dev.com.jongewaard.mylogin.activities.LoginActivity;
+import dev.com.jongewaard.mylogin.activities.MainActivity;
 import dev.com.jongewaard.mylogin.utils.Util;
 
 /**
@@ -26,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
         prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
         Intent intentLogin = new Intent(this, LoginActivity.class);
-        Intent intentMain = new Intent(this, LoginActivity.class);
+        Intent intentMain = new Intent(this, MainActivity.class);
 
         //si no esta vacio el email y no esta vacio el password
         if(!TextUtils.isEmpty(Util.getUserMailPrefs(prefs))
