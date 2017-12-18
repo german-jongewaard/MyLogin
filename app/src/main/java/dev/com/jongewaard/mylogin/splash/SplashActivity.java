@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 
 import dev.com.jongewaard.mylogin.activities.LoginActivity;
+import dev.com.jongewaard.mylogin.utils.Util;
 
 /**
  * Created by german on 18-12-17.
@@ -28,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
         Intent intentMain = new Intent(this, LoginActivity.class);
 
         //si no esta vacio el email y no esta vacio el password
-        if(!TextUtils.isEmpty(getUserMailPrefs()) && !TextUtils.isEmpty(getUserPassPrefs() )){
+        if(!TextUtils.isEmpty(Util.getUserMailPrefs(prefs)) && !TextUtils.isEmpty(Util.getUserPassPrefs(prefs))){
 
             startActivity(intentMain);
         }else {
@@ -39,17 +40,5 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
-    //obtengo el email
-    private String getUserMailPrefs(){
 
-        return prefs.getString("email", "");
-
-    }
-
-    //obtengo el password
-    private String getUserPassPrefs(){
-
-        return prefs.getString("pass", "");
-
-    }
 }
