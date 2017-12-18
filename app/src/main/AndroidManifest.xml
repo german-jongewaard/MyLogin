@@ -17,9 +17,9 @@
         <activity android:name=".LoginActivity" />
 
         <!-- SplashActivity como activity principal -->
-        <activity android:name=".SplashActivity" >
-                <!-- Aquí le paso el tema que habia creado en el drawable -->
-                    android:theme="@style/SplashScreen" >
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashScreen" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
