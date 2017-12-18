@@ -29,16 +29,12 @@ public class SplashActivity extends AppCompatActivity {
         Intent intentMain = new Intent(this, LoginActivity.class);
 
         //si no esta vacio el email y no esta vacio el password
-        if(!TextUtils.isEmpty(Util.getUserMailPrefs(prefs)) && !TextUtils.isEmpty(Util.getUserPassPrefs(prefs))){
-
+        if(!TextUtils.isEmpty(Util.getUserMailPrefs(prefs))
+                && !TextUtils.isEmpty(Util.getUserPassPrefs(prefs))){
             startActivity(intentMain);
         }else {
             startActivity(intentLogin);
         }
         finish();//mata la instnacia de este activity
-
-
     }
-
-
 }
