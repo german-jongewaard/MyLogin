@@ -9,11 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <!-- Login como activity principal -->
-        <activity android:name=".LoginActivity">
 
-        <intent-filter>
+        <!-- MainActivity -->
+        <activity android:name=".MainActivity" />
+
+        <!-- LoginActivity -->
+        <activity android:name=".LoginActivity" />
+
+        <!-- SplashActivity como activity principal -->
+        <activity android:name=".SplashActivity" >
+                <!-- Aquí le paso el tema que habia creado en el drawable -->
+                    android:theme="@style/SplashScreen" >
+
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
