@@ -1,4 +1,4 @@
-package dev.com.jongewaard.mylogin;
+package dev.com.jongewaard.mylogin.activities;
 
 
 import android.content.Context;
@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import dev.com.jongewaard.mylogin.R;
 
 /**
  * Created by german on 16-12-17.

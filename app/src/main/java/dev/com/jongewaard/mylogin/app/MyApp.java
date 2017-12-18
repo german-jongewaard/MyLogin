@@ -1,4 +1,4 @@
-package dev.com.jongewaard.mylogin;
+package dev.com.jongewaard.mylogin.app;
 
 import android.app.Application;
 import android.os.SystemClock;

@@ -1,4 +1,4 @@
-package dev.com.jongewaard.mylogin;
+package dev.com.jongewaard.mylogin.activities;
 
 
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import dev.com.jongewaard.mylogin.R;
 
 public class MainActivity extends AppCompatActivity {
 

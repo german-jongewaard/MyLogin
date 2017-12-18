@@ -1,10 +1,10 @@
-package dev.com.jongewaard.mylogin;
+package dev.com.jongewaard.mylogin.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import dev.com.jongewaard.mylogin.activities.LoginActivity;
 
 /**
  * Created by german on 18-12-17.
