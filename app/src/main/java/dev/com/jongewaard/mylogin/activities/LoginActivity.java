@@ -61,21 +61,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private boolean login(String email, String password){
-
-        if(!isValidEmail(email)){
-            //si el email falla, mensaje y falso.
-            Toast.makeText(this, "Email is not valid, please try again", Toast.LENGTH_LONG).show();
-            return false;
-        }else if(!isValidPassword(password)){
-            //si el password falla, mensaje y falso.
-            Toast.makeText(this, "Password is not valid, 4 characters or more, please try again", Toast.LENGTH_LONG).show();
-            return false;
-        }else {
-            //si ninguno fallo es verdadero!
-            return true;
-        }
-    }
 
     /* Método para recojer el codigo*/
     private void bindUI() {
@@ -97,6 +82,23 @@ public class LoginActivity extends AppCompatActivity {
             editTextPassword.setText(password);
         }
     }
+
+    private boolean login(String email, String password){
+
+        if(!isValidEmail(email)){
+            //si el email falla, mensaje y falso.
+            Toast.makeText(this, "Email is not valid, please try again", Toast.LENGTH_LONG).show();
+            return false;
+        }else if(!isValidPassword(password)){
+            //si el password falla, mensaje y falso.
+            Toast.makeText(this, "Password is not valid, 4 characters or more, please try again", Toast.LENGTH_LONG).show();
+            return false;
+        }else {
+            //si ninguno fallo es verdadero!
+            return true;
+        }
+    }
+
 
     private void saveOnPreferences(String email, String password){
         if(switchRemember.isChecked()){

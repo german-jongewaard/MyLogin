@@ -7,9 +7,6 @@ import android.content.SharedPreferences;
  */
 
 public class Util {
-
-
-
     //obtengo el email
     public static String getUserMailPrefs(SharedPreferences preferences){
 
