@@ -12,8 +12,4 @@
         android:id="@+id/menu_forgetlogout"
         android:title="forget and Log out"
         app:showAsAction="never" />
-
-
-
-
 </menu>

@@ -5,8 +5,9 @@
     <item android:drawable="@color/colorWhite" />
 
     <item>
-        <bitmap
-            android:gravity="center"
-            android:src="@drawable/login_manager" />
+        <bitmap android:gravity="center"
+        android:src="@drawable/ic_launcher_background"
+
+        />
     </item>
     </layer-list>
