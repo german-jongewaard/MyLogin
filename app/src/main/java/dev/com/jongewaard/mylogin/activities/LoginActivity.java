@@ -82,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
 
             editTextEmail.setText(email);
             editTextPassword.setText(password);
+            switchRemember.setChecked(true);
         }
     }
 
