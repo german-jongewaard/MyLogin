@@ -14,6 +14,7 @@ public class MyApp extends Application {
 
         super.onCreate();
 
+        // Este es solo para poder ver el Splash Screen durante 3 segundos
         SystemClock.sleep(3000);
     }
 }
