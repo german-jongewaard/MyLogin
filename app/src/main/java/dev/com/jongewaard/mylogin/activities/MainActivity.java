@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import dev.com.jongewaard.mylogin.R;
+import dev.com.jongewaard.mylogin.utils.Util;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,14 +44,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_logout:
                 logOut();
                 return true;
-
             case R.id.menu_forgetlogout:
-                removeSharedPreferences();
+                Util.removeSharedPreferences(prefs);
                 logOut();
                 return true;
-
             default:
-
                 return super.onOptionsItemSelected(item);
 
         }
@@ -58,17 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
     //desde el MainActivity vamos a ir al LoginActivity
     private void logOut(){
-
         Intent intent = new Intent(this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-
     }
 
-    //Borrado de todas las preferencias
-    private void removeSharedPreferences() {
 
-        prefs.edit().clear().apply();
-
-    }
 }
